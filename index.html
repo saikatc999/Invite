@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Be My Valentine?</title>
+    <title>Transfer News: Be My Valentine?</title>
     <style>
         body {
             display: flex;
@@ -12,54 +12,81 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
-            background-color: #ffe6e6;
-            font-family: 'Arial', sans-serif;
+            /* Manchester United Gradient */
+            background: linear-gradient(135deg, #da291c 0%, #000000 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow: hidden;
             text-align: center;
+            color: white;
         }
-        h1 { color: #d63384; font-size: 2.5rem; padding: 20px; }
-        .buttons { display: flex; gap: 20px; margin-top: 20px; }
+        #quiz-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 2px solid #da291c;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+        h1 { font-size: 2.5rem; margin-bottom: 30px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .buttons { display: flex; gap: 20px; justify-content: center; margin-top: 20px; }
         button {
-            padding: 15px 30px;
+            padding: 15px 40px;
             font-size: 1.2rem;
+            font-weight: bold;
             cursor: pointer;
             border: none;
-            border-radius: 10px;
-            z-index: 10;
+            border-radius: 50px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
         }
-        #yesBtn { background-color: #ff4d6d; color: white; }
-        #noBtn {
-            background-color: #6c757d;
+        #yesBtn { 
+            background-color: #da291c; 
             color: white;
+            box-shadow: 0 5px 15px rgba(218, 41, 28, 0.4);
+        }
+        #yesBtn:hover { transform: scale(1.1); background-color: #f03224; }
+        
+        #noBtn {
+            background-color: #333;
+            color: #aaa;
             position: absolute;
         }
         #celebration {
             display: none;
             flex-direction: column;
             align-items: center;
+            animation: fadeIn 1s ease-in;
         }
         #brunoImg {
-            width: 300px;
+            width: 350px;
+            border: 5px solid white;
             border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             margin-top: 20px;
         }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .match-day { font-size: 0.9rem; letter-spacing: 2px; color: #ffd700; margin-bottom: 10px; }
     </style>
 </head>
 <body>
 
     <div id="quiz-container">
+        <div class="match-day">VALENTINE'S DAY FIXTURE</div>
         <h1 id="question">Will you be my Valentine? ❤️</h1>
         <div class="buttons">
-            <button id="yesBtn" onclick="celebrate()">Yes!</button>
+            <button id="yesBtn" onclick="celebrate()">YES! (GGMU)</button>
             <button id="noBtn" onmouseover="moveButton()">No</button>
         </div>
     </div>
 
     <div id="celebration">
-        <h1>GGMU! She said YES! ❤️👹</h1>
-        <img id="brunoImg" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3VscjRscmdxd3lqZ3R4bmJ6amJ6amJ6amJ6amJ6amJ6amJ6amJ6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/Iat3XfWInM9V6Y3A8d/giphy.gif" alt="Bruno Fernandes Celebrating">
-        <p style="font-size: 1.5rem; color: #d63384; margin-top: 15px;">See you on the 14th!</p>
+        <div class="match-day">FULL TIME: SHE SAID YES!</div>
+        <h1>Magnifico! ❤️👹</h1>
+        <img id="brunoImg" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3VscjRscmdxd3lqZ3R4bmJ6amJ6amJ6amJ6amJ6amJ6amJ6amJ6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/Iat3XfWInM9V6Y3A8d/giphy.gif" alt="Bruno Fernandes Celebration">
+        <p style="font-size: 1.5rem; color: #ffd700; margin-top: 20px; font-weight: bold;">See you on the 14th! ⚽️🌹</p>
     </div>
 
     <script>
